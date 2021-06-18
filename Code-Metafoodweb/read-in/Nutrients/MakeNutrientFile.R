@@ -1,0 +1,92 @@
+#### create nutrients
+set.seed(123)
+library(truncnorm)
+library(EnvStats)
+Oligo<-matrix(c(rep(1,50)), ncol=1)
+Meso<-matrix(c(rep(75,50)), ncol=1)
+Eutro<-matrix(c(rep(149,50)), ncol=1)
+x<-seq(-0.8,2,0.2)
+Hetero1<-matrix(10^(sample(x,50, replace = T)), ncol=1)
+Hetero2<-matrix(10^(sample(x,50, replace = T)), ncol=1)
+Hetero3<-matrix(10^(sample(x,50, replace = T)), ncol=1)
+Hetero4<-matrix(10^(sample(x,50, replace = T)), ncol=1)
+Hetero5<-matrix(10^(sample(x,50, replace = T)), ncol=1)
+
+
+a<-seq(-0.8,0,0.2)
+b<-seq(0.2,1,0.2)
+c<-seq(1.2,2,0.2)
+Hetero.Eutro1<-matrix(10^(c(sample(a,3, replace = T),sample(b,5, replace = T),sample(c,42, replace = T))), ncol=1)
+Hetero.Eutro2<-matrix(10^(c(sample(a,3, replace = T),sample(b,5, replace = T),sample(c,42, replace = T))), ncol=1)
+Hetero.Eutro3<-matrix(10^(c(sample(a,3, replace = T),sample(b,5, replace = T),sample(c,42, replace = T))), ncol=1)
+Hetero.Eutro4<-matrix(10^(c(sample(a,3, replace = T),sample(b,5, replace = T),sample(c,42, replace = T))), ncol=1)
+Hetero.Eutro5<-matrix(10^(c(sample(a,3, replace = T),sample(b,5, replace = T),sample(c,42, replace = T))), ncol=1)
+
+Hetero.Oligo1<-matrix(10^(c(sample(a,42, replace = T),sample(b,5, replace = T),sample(c,3, replace = T))), ncol=1)
+Hetero.Oligo2<-matrix(10^(c(sample(a,42, replace = T),sample(b,5, replace = T),sample(c,3, replace = T))), ncol=1)
+Hetero.Oligo3<-matrix(10^(c(sample(a,42, replace = T),sample(b,5, replace = T),sample(c,3, replace = T))), ncol=1)
+Hetero.Oligo4<-matrix(10^(c(sample(a,42, replace = T),sample(b,5, replace = T),sample(c,3, replace = T))), ncol=1)
+Hetero.Oligo5<-matrix(10^(c(sample(a,42, replace = T),sample(b,5, replace = T),sample(c,3, replace = T))), ncol=1)
+
+log10(mean(Hetero1))
+log10(mean(Hetero2))
+log10(mean(Hetero3))
+log10(mean(Hetero4))
+log10(mean(Hetero5))
+
+
+log10(mean(Hetero.Oligo1))
+log10(mean(Hetero.Oligo2))
+log10(mean(Hetero.Oligo3))
+log10(mean(Hetero.Oligo4))
+log10(mean(Hetero.Oligo5))
+
+log10(mean(Hetero.Eutro1))
+log10(mean(Hetero.Eutro2))
+log10(mean(Hetero.Eutro3))
+log10(mean(Hetero.Eutro4))
+log10(mean(Hetero.Eutro5))
+
+hist(log10(Hetero1))
+hist(log10(Hetero2))
+hist(log10(Hetero3))
+hist(log10(Hetero4))
+hist(log10(Hetero5))
+
+hist(log10(Hetero.Oligo1))
+hist(log10(Hetero.Oligo2))
+hist(log10(Hetero.Oligo3))
+hist(log10(Hetero.Oligo4))
+hist(log10(Hetero.Oligo5))
+
+hist(log10(Hetero.Eutro1))
+hist(log10(Hetero.Eutro2))
+hist(log10(Hetero.Eutro3))
+hist(log10(Hetero.Eutro4))
+hist(log10(Hetero.Eutro5))
+
+summary(Hetero4)
+
+write.table(Hetero1,"Nutrient_30.out", row.names=F,col.names=F)
+write.table(Hetero2,"Nutrient_31.out", row.names=F,col.names=F)
+write.table(Hetero3,"Nutrient_32.out", row.names=F,col.names=F)
+write.table(Hetero4,"Nutrient_33.out", row.names=F,col.names=F)
+write.table(Hetero5,"Nutrient_34.out", row.names=F,col.names=F)
+
+write.table(Hetero.Oligo1,"Nutrient_35.out", row.names=F,col.names=F)
+write.table(Hetero.Oligo2,"Nutrient_36.out", row.names=F,col.names=F)
+write.table(Hetero.Oligo3,"Nutrient_37.out", row.names=F,col.names=F)
+write.table(Hetero.Oligo4,"Nutrient_38.out", row.names=F,col.names=F)
+write.table(Hetero.Oligo5,"Nutrient_39.out", row.names=F,col.names=F)
+
+write.table(Hetero.Eutro1,"Nutrient_40.out", row.names=F,col.names=F)
+write.table(Hetero.Eutro2,"Nutrient_41.out", row.names=F,col.names=F)
+write.table(Hetero.Eutro3,"Nutrient_42.out", row.names=F,col.names=F)
+write.table(Hetero.Eutro4,"Nutrient_43.out", row.names=F,col.names=F)
+write.table(Hetero.Eutro5,"Nutrient_44.out", row.names=F,col.names=F)
+x<-seq(-0.8,2,0.2)
+for (i in 1:length(x))
+{
+Oligo<-matrix(c(rep((10^x[i]),50)), ncol=1)
+write.table(Oligo,paste("Nutrient_",i,".out",sep=""), row.names=F,col.names=F)
+}

@@ -1,0 +1,4 @@
+body.mass, if.basal.spp, D_Max_i, Nutr.halfsat.dens1
+100, 1, 0.2, 0.1
+10000, 0, 0.1990536, 0
+1000000, 0, 0.2505936, 0
